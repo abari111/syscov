@@ -1,0 +1,70 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+
+ENTITY top_tb IS
+END top_tb;
+
+
+
+
+ARCHITECTURE rtl OF top_tb IS
+COMPONENT top IS
+    PORT(
+        rst       :IN STD_LOGIC;
+        pwm_sig   :IN STD_LOGIC;
+        clk       :IN STD_LOGIC;
+        timer     :IN STD_LOGIC;
+        demux_sel :IN STD_LOGIC;
+        indicateur:IN STD_LOGIC;
+        data      :IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+        jour1     :OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        jour2     :OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        max_nb    :OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        current_nb:OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+        );
+END COMPONENT; 
+   SIGNAL data:STD_LOGIC_VECTOR(9 DOWNTO 0);
+   SIGNAL jour1,jour2:STD_LOGIC_VECTOR(7 DOWNTO 0);
+   SIGNAL max_nb,current_nb:STD_LOGIC_VECTOR(6 DOWNTO 0);
+   SIGNAL pwm_sig,clk,timer,demux_sel,indicateur,rst:STD_LOGIC;
+   
+   BEGIN
+       SYS_DE_COMPTAGE:top PORT MAP(rst,pwm_sig,clk,timer,demux_sel,indicateur,data,jour1,
+                                    jour2,max_nb,current_nb);
+       SENSOR_OUTPUT:PROCESS
+                         BEGIN
+                             pwm_sig<='0';
+                             WAIT FOR 30 NS;
+                             pwm_sig<='1';
+                             WAIT FOR 20 NS;
+                         END PROCESS;
+                         
+      HORLOGE:PROCESS
+                         BEGIN
+                             clk<='0';
+                             WAIT FOR 10 NS;
+                             clk<='1';
+                             WAIT FOR 10 NS;
+                         END PROCESS;    
+      SYSTEM_INPUT:PROCESS
+                     BEGIN
+                        timer<='0';
+                        data<="0000001000";
+                        demux_sel<='0';
+                        WAIT FOR 40 NS;
+                        timer<='1';
+                        WAIT FOR 360 NS;
+                        indicateur<='1';
+                        WAIT FOR 150 NS;
+                        timer<='0';
+                        indicateur<='0';
+                        WAIT FOR 40 NS;
+                END PROCESS;
+        END    rtl;
+                                     
+                   
+   
+
+
+        

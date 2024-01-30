@@ -1,0 +1,449 @@
+Analysis & Synthesis report for top
+Tue Sep 15 12:30:21 2020
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |top|control_part:CTRL_PART|c_state
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "operative_part:OP_PART|seven_sg:Affich2"
+ 12. Port Connectivity Checks: "operative_part:OP_PART|memoire_16bits:Memoire"
+ 13. Port Connectivity Checks: "operative_part:OP_PART|mux_2_1:Multiplexeur"
+ 14. Port Connectivity Checks: "operative_part:OP_PART|seven_sg:Affich1"
+ 15. Port Connectivity Checks: "operative_part:OP_PART|reg_4bits:Registre4bit"
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Sep 15 12:30:21 2020    ;
+; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name                      ; top                                      ;
+; Top-level Entity Name              ; top                                      ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 106                                      ;
+;     Total combinational functions  ; 90                                       ;
+;     Dedicated logic registers      ; 45                                       ;
+; Total registers                    ; 45                                       ;
+; Total pins                         ; 46                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EP2C70F896C6       ;                    ;
+; Top-level entity name                                          ; top                ; top                ;
+; Family name                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; DSP Block Balancing                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Timing-Driven Synthesis                                        ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                    ; Off                ; Off                ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; SDC constraint protection                                      ; Off                ; Off                ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                          ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------+
+; ../src/adder_8bits.vhd           ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/adder_8bits.vhd    ;
+; ../src/codeur_bcd.vhd            ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/codeur_bcd.vhd     ;
+; ../src/compare_4bits.vhd         ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/compare_4bits.vhd  ;
+; ../src/compt_4bits.vhd           ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/compt_4bits.vhd    ;
+; ../src/control_part.vhd          ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/control_part.vhd   ;
+; ../src/demux_2_1.vhd             ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/demux_2_1.vhd      ;
+; ../src/memoire_16bits.vhd        ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/memoire_16bits.vhd ;
+; ../src/mux_2_1.vhd               ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/mux_2_1.vhd        ;
+; ../src/not_gate.vhd              ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/not_gate.vhd       ;
+; ../src/operative_part.vhd        ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/operative_part.vhd ;
+; ../src/reg_4bits.vhd             ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/reg_4bits.vhd      ;
+; ../src/reg_8bits.vhd             ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/reg_8bits.vhd      ;
+; ../src/seven_sg.vhd              ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/seven_sg.vhd       ;
+; ../src/top.vhd                   ; yes             ; User VHDL File  ; D:/DODO_MAMANE_ABARI/partie_CT/src/top.vhd            ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 106   ;
+;                                             ;       ;
+; Total combinational functions               ; 90    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 35    ;
+;     -- 3 input functions                    ; 30    ;
+;     -- <=2 input functions                  ; 25    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 83    ;
+;     -- arithmetic mode                      ; 7     ;
+;                                             ;       ;
+; Total registers                             ; 45    ;
+;     -- Dedicated logic registers            ; 45    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 46    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 45    ;
+; Total fan-out                               ; 447   ;
+; Average fan-out                             ; 2.47  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
+; |top                              ; 90 (0)            ; 45 (0)       ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |top                                                               ; work         ;
+;    |control_part:CTRL_PART|       ; 16 (16)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_part:CTRL_PART                                        ; work         ;
+;    |operative_part:OP_PART|       ; 74 (0)            ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART                                        ; work         ;
+;       |codeur_bcd:Codeur|         ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|codeur_bcd:Codeur                      ; work         ;
+;       |compare_4bits:Comparateur| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|compare_4bits:Comparateur              ; work         ;
+;       |compt_4bits:Compteur|      ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|compt_4bits:Compteur                   ; work         ;
+;       |demux_2_1:Demuxtiplex|     ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|demux_2_1:Demuxtiplex                  ; work         ;
+;       |memoire_16bits:Memoire|    ; 0 (0)             ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|memoire_16bits:Memoire                 ; work         ;
+;          |reg_8bits:reg_1|        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|memoire_16bits:Memoire|reg_8bits:reg_1 ; work         ;
+;          |reg_8bits:reg_2|        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|memoire_16bits:Memoire|reg_8bits:reg_2 ; work         ;
+;       |mux_2_1:Multiplexeur|      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|mux_2_1:Multiplexeur                   ; work         ;
+;       |reg_4bits:Registre4bit|    ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|reg_4bits:Registre4bit                 ; work         ;
+;       |reg_8bits:Registre8bit1|   ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|reg_8bits:Registre8bit1                ; work         ;
+;       |reg_8bits:Registre8bit2|   ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|reg_8bits:Registre8bit2                ; work         ;
+;       |seven_sg:Affich1|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|seven_sg:Affich1                       ; work         ;
+;       |seven_sg:Affich2|          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|operative_part:OP_PART|seven_sg:Affich2                       ; work         ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------+
+; State Machine - |top|control_part:CTRL_PART|c_state                         ;
++------------+------------+------------+------------+------------+------------+
+; Name       ; c_state.S4 ; c_state.S3 ; c_state.S2 ; c_state.S1 ; c_state.S0 ;
++------------+------------+------------+------------+------------+------------+
+; c_state.S0 ; 0          ; 0          ; 0          ; 0          ; 0          ;
+; c_state.S1 ; 0          ; 0          ; 0          ; 1          ; 1          ;
+; c_state.S2 ; 0          ; 0          ; 1          ; 0          ; 1          ;
+; c_state.S3 ; 0          ; 1          ; 0          ; 0          ; 1          ;
+; c_state.S4 ; 1          ; 0          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                  ;
++---------------------------------------------------------+-----------------------------------+------------------------+
+; Latch Name                                              ; Latch Enable Signal               ; Free of Timing Hazards ;
++---------------------------------------------------------+-----------------------------------+------------------------+
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output1[0] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output1[1] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output1[2] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output1[3] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output1[4] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output1[5] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output1[6] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output1[7] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output2[0] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output2[1] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output2[2] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output2[3] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output2[4] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output2[5] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output2[6] ; demux_sel                         ; yes                    ;
+; operative_part:OP_PART|demux_2_1:Demuxtiplex|output2[7] ; demux_sel                         ; yes                    ;
+; control_part:CTRL_PART|en_reg4                          ; control_part:CTRL_PART|WideOr1    ; yes                    ;
+; control_part:CTRL_PART|en_compt                         ; control_part:CTRL_PART|c_state.S4 ; yes                    ;
+; control_part:CTRL_PART|en_mem                           ; control_part:CTRL_PART|WideOr3    ; yes                    ;
+; control_part:CTRL_PART|rst_reg8                         ; control_part:CTRL_PART|WideOr1    ; yes                    ;
+; control_part:CTRL_PART|sel                              ; control_part:CTRL_PART|sel~0      ; yes                    ;
+; Number of user-specified and inferred latches = 21      ;                                   ;                        ;
++---------------------------------------------------------+-----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 45    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|operative_part:OP_PART|reg_8bits:Registre8bit2|data_out[0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|operative_part:OP_PART|reg_8bits:Registre8bit1|data_out[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "operative_part:OP_PART|seven_sg:Affich2" ;
++---------+-------+----------+----------------------------------------+
+; Port    ; Type  ; Severity ; Details                                ;
++---------+-------+----------+----------------------------------------+
+; control ; Input ; Info     ; Stuck at VCC                           ;
++---------+-------+----------+----------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "operative_part:OP_PART|memoire_16bits:Memoire" ;
++------+-------+----------+-------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                         ;
++------+-------+----------+-------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                    ;
++------+-------+----------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "operative_part:OP_PART|mux_2_1:Multiplexeur" ;
++-------+-------+----------+----------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                      ;
++-------+-------+----------+----------------------------------------------+
+; data1 ; Input ; Info     ; Stuck at GND                                 ;
++-------+-------+----------+----------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "operative_part:OP_PART|seven_sg:Affich1" ;
++---------+-------+----------+----------------------------------------+
+; Port    ; Type  ; Severity ; Details                                ;
++---------+-------+----------+----------------------------------------+
+; control ; Input ; Info     ; Stuck at VCC                           ;
++---------+-------+----------+----------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "operative_part:OP_PART|reg_4bits:Registre4bit" ;
++------+-------+----------+-------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                         ;
++------+-------+----------+-------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                    ;
++------+-------+----------+-------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Tue Sep 15 12:30:19 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
+Info: Found 2 design units, including 1 entities, in source file ../src/adder_8bits.vhd
+    Info: Found design unit 1: adder_8bits-rtl
+    Info: Found entity 1: adder_8bits
+Info: Found 2 design units, including 1 entities, in source file ../src/codeur_bcd.vhd
+    Info: Found design unit 1: codeur_bcd-rtl
+    Info: Found entity 1: codeur_bcd
+Info: Found 2 design units, including 1 entities, in source file ../src/compare_4bits.vhd
+    Info: Found design unit 1: compare_4bits-rtl
+    Info: Found entity 1: compare_4bits
+Info: Found 2 design units, including 1 entities, in source file ../src/compt_4bits.vhd
+    Info: Found design unit 1: compt_4bits-rtl
+    Info: Found entity 1: compt_4bits
+Info: Found 2 design units, including 1 entities, in source file ../src/control_part.vhd
+    Info: Found design unit 1: control_part-rtl
+    Info: Found entity 1: control_part
+Info: Found 2 design units, including 1 entities, in source file ../src/demux_2_1.vhd
+    Info: Found design unit 1: demux_2_1-rtl
+    Info: Found entity 1: demux_2_1
+Info: Found 2 design units, including 1 entities, in source file ../src/memoire_16bits.vhd
+    Info: Found design unit 1: memoire_16bits-rtl
+    Info: Found entity 1: memoire_16bits
+Info: Found 2 design units, including 1 entities, in source file ../src/mux_2_1.vhd
+    Info: Found design unit 1: mux_2_1-rtl
+    Info: Found entity 1: mux_2_1
+Info: Found 2 design units, including 1 entities, in source file ../src/not_gate.vhd
+    Info: Found design unit 1: not_gate-rtl
+    Info: Found entity 1: not_gate
+Info: Found 2 design units, including 1 entities, in source file ../src/operative_part.vhd
+    Info: Found design unit 1: operative_part-rtl
+    Info: Found entity 1: operative_part
+Info: Found 2 design units, including 1 entities, in source file ../src/reg_4bits.vhd
+    Info: Found design unit 1: reg_4bits-rtl
+    Info: Found entity 1: reg_4bits
+Info: Found 2 design units, including 1 entities, in source file ../src/reg_8bits.vhd
+    Info: Found design unit 1: reg_8bits-rtl
+    Info: Found entity 1: reg_8bits
+Info: Found 2 design units, including 1 entities, in source file ../src/seven_sg.vhd
+    Info: Found design unit 1: seven_sg-rtl
+    Info: Found entity 1: seven_sg
+Info: Found 2 design units, including 1 entities, in source file ../src/top.vhd
+    Info: Found design unit 1: top-rtl
+    Info: Found entity 1: top
+Info: Elaborating entity "top" for the top level hierarchy
+Info: Elaborating entity "control_part" for hierarchy "control_part:CTRL_PART"
+Warning (10631): VHDL Process Statement warning at control_part.vhd(88): inferring latch(es) for signal or variable "en_reg4", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at control_part.vhd(88): inferring latch(es) for signal or variable "en_compt", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at control_part.vhd(88): inferring latch(es) for signal or variable "en_mem", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at control_part.vhd(88): inferring latch(es) for signal or variable "sel", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at control_part.vhd(88): inferring latch(es) for signal or variable "rst_reg8", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "rst_reg8" at control_part.vhd(88)
+Info (10041): Inferred latch for "sel" at control_part.vhd(88)
+Info (10041): Inferred latch for "en_mem" at control_part.vhd(88)
+Info (10041): Inferred latch for "en_compt" at control_part.vhd(88)
+Info (10041): Inferred latch for "en_reg4" at control_part.vhd(88)
+Info: Elaborating entity "operative_part" for hierarchy "operative_part:OP_PART"
+Info: Elaborating entity "codeur_bcd" for hierarchy "operative_part:OP_PART|codeur_bcd:Codeur"
+Info: Elaborating entity "reg_4bits" for hierarchy "operative_part:OP_PART|reg_4bits:Registre4bit"
+Info: Elaborating entity "seven_sg" for hierarchy "operative_part:OP_PART|seven_sg:Affich1"
+Warning (10631): VHDL Process Statement warning at seven_sg.vhd(39): inferring latch(es) for signal or variable "seg_out", which holds its previous value in one or more paths through the process
+Info: Elaborating entity "compare_4bits" for hierarchy "operative_part:OP_PART|compare_4bits:Comparateur"
+Info: Elaborating entity "compt_4bits" for hierarchy "operative_part:OP_PART|compt_4bits:Compteur"
+Info: Elaborating entity "mux_2_1" for hierarchy "operative_part:OP_PART|mux_2_1:Multiplexeur"
+Info (10041): Inferred latch for "output[0]" at mux_2_1.vhd(42)
+Info (10041): Inferred latch for "output[1]" at mux_2_1.vhd(42)
+Info (10041): Inferred latch for "output[2]" at mux_2_1.vhd(42)
+Info (10041): Inferred latch for "output[3]" at mux_2_1.vhd(42)
+Info: Elaborating entity "adder_8bits" for hierarchy "operative_part:OP_PART|adder_8bits:Additionneur"
+Info: Elaborating entity "reg_8bits" for hierarchy "operative_part:OP_PART|reg_8bits:Registre8bit1"
+Info: Elaborating entity "memoire_16bits" for hierarchy "operative_part:OP_PART|memoire_16bits:Memoire"
+Info: Elaborating entity "demux_2_1" for hierarchy "operative_part:OP_PART|demux_2_1:Demuxtiplex"
+Info (10041): Inferred latch for "output2[0]" at demux_2_1.vhd(45)
+Info (10041): Inferred latch for "output2[1]" at demux_2_1.vhd(45)
+Info (10041): Inferred latch for "output2[2]" at demux_2_1.vhd(45)
+Info (10041): Inferred latch for "output2[3]" at demux_2_1.vhd(45)
+Info (10041): Inferred latch for "output2[4]" at demux_2_1.vhd(45)
+Info (10041): Inferred latch for "output2[5]" at demux_2_1.vhd(45)
+Info (10041): Inferred latch for "output2[6]" at demux_2_1.vhd(45)
+Info (10041): Inferred latch for "output2[7]" at demux_2_1.vhd(45)
+Info (10041): Inferred latch for "output1[0]" at demux_2_1.vhd(44)
+Info (10041): Inferred latch for "output1[1]" at demux_2_1.vhd(44)
+Info (10041): Inferred latch for "output1[2]" at demux_2_1.vhd(44)
+Info (10041): Inferred latch for "output1[3]" at demux_2_1.vhd(44)
+Info (10041): Inferred latch for "output1[4]" at demux_2_1.vhd(44)
+Info (10041): Inferred latch for "output1[5]" at demux_2_1.vhd(44)
+Info (10041): Inferred latch for "output1[6]" at demux_2_1.vhd(44)
+Info (10041): Inferred latch for "output1[7]" at demux_2_1.vhd(44)
+Info: Elaborating entity "not_gate" for hierarchy "operative_part:OP_PART|not_gate:Porte_Not"
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted tri-state buffer "operative_part:OP_PART|codeur_bcd:Codeur|data_out[1]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "operative_part:OP_PART|codeur_bcd:Codeur|data_out[0]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "operative_part:OP_PART|codeur_bcd:Codeur|data_out[2]" feeding internal logic into a wire
+    Warning: Converted tri-state buffer "operative_part:OP_PART|codeur_bcd:Codeur|data_out[3]" feeding internal logic into a wire
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "control_part:CTRL_PART|rst_reg8" merged with LATCH primitive "control_part:CTRL_PART|en_reg4"
+Warning: Latch control_part:CTRL_PART|en_reg4 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal control_part:CTRL_PART|c_state.S1
+Warning: Latch control_part:CTRL_PART|en_mem has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal control_part:CTRL_PART|c_state.S4
+Info: Implemented 152 device resources after synthesis - the final resource count might be different
+    Info: Implemented 16 input pins
+    Info: Implemented 30 output pins
+    Info: Implemented 106 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 258 megabytes
+    Info: Processing ended: Tue Sep 15 12:30:21 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
