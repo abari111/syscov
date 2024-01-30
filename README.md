@@ -54,3 +54,4 @@ Detailed Architecture
 
 - Modélisation des circuits numériques en VHDL : Pr.A.MANSOURI
 - Digital Fundamentals : Thomas L. Floyd
+=======
